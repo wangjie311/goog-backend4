@@ -72,7 +72,7 @@ router.post("/create", async (req, res) => {
 });
 
 // 📩 支付回调（蓝鲸支付服务器调用）
-router.post("/callback", express.urlencoded({ extended: false }), (req, res) => {
+router.post("/callback", express.urlencoded({ extended: false }), async (req, res) => {
   const data = req.body;
   console.log("蓝鲸支付回调数据:", data);
 
